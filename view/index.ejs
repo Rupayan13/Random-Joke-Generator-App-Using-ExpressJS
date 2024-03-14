@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Random Joke Generator</h1>
+        <div class="joke" id="joke"></div>
+        <form action="/" method="post">
+        <input class="button" type="submit" name="submit" value="Get Joke">
+       </form>
+       <% if(locals.content) {%>
+       <% if(!content.joke) {%>
+       <div class="result"><b>Setup :</b><%= content.setup %></div>
+       <div class="result"><b>Delivery :</b><%= content.delivery %></div>
+       <% }else{ %>
+       <div class="result"><b>Joke :</b><%= content.joke %></div>
+       <% } %>
+       <% } %>
+    </div>
+</body>
+</html>
